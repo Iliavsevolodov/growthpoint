@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'sunflower-section-dividers.js'
+      - '.github/workflows/enable-sunflower-dividers.yml'
 jobs:
   update-index:
     runs-on: ubuntu-latest
