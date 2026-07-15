@@ -19,11 +19,11 @@
     if (list) {
       list.innerHTML = `
         <div class="funnel-intro"><span>Это не обещание результата</span><p>Это пример логики: чем шире круг новых знакомств, тем выше вероятность найти людей, которым действительно откликнется идея.</p></div>
-        <div class="funnel-row reveal" style="--w:100%"><strong>500–1000</strong><span>потенциал новой аудитории</span><small>люди, с которыми можно познакомиться через контент, сообщества и рекомендации</small></div>
-        <div class="funnel-row reveal" style="--w:82%"><strong>100</strong><span>новых знакомств и контактов</span><small>живые диалоги без давления и массового спама</small></div>
-        <div class="funnel-row reveal" style="--w:64%"><strong>10</strong><span>готовы познакомиться с идеей</span><small>задают вопросы и хотят узнать больше</small></div>
-        <div class="funnel-row reveal" style="--w:46%"><strong>1</strong><span>действительно включается</span><small>принимает решение действовать и проходит запуск</small></div>
-        <div class="funnel-row final reveal" style="--w:100%"><strong>5–10</strong><span>активных партнёров первой линии</span><small>формируются постепенно благодаря регулярной системной работе</small></div>`;
+        <div class="funnel-row visible" style="--w:100%"><strong>500–1000</strong><span>потенциал новой аудитории</span><small>люди, с которыми можно познакомиться через контент, сообщества и рекомендации</small></div>
+        <div class="funnel-row visible" style="--w:82%"><strong>100</strong><span>новых знакомств и контактов</span><small>живые диалоги без давления и массового спама</small></div>
+        <div class="funnel-row visible" style="--w:64%"><strong>10</strong><span>готовы познакомиться с идеей</span><small>задают вопросы и хотят узнать больше</small></div>
+        <div class="funnel-row visible" style="--w:46%"><strong>1</strong><span>действительно включается</span><small>принимает решение действовать и проходит запуск</small></div>
+        <div class="funnel-row final visible" style="--w:100%"><strong>5–10</strong><span>активных партнёров первой линии</span><small>формируются постепенно благодаря регулярной системной работе</small></div>`;
     }
   }
 
@@ -44,7 +44,7 @@
     .funnel-intro{padding:24px 26px;background:#f3e4c9;border:1px solid rgba(190,132,24,.3);margin-bottom:8px}
     .funnel-intro span{display:block;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a66f12;margin-bottom:8px}
     .funnel-intro p{margin:0;color:#6b5540;line-height:1.65}
-    .funnel .funnel-row{width:var(--w)!important;max-width:100%!important;margin:0!important;display:grid!important;grid-template-columns:minmax(120px,180px) minmax(0,1fr)!important;gap:4px 24px!important;align-items:center!important;background:#fffaf1!important;border:1px solid rgba(190,132,24,.28)!important;border-left:8px solid #efb51f!important;padding:22px 26px!important;color:#2b2119!important;min-height:118px!important;box-sizing:border-box!important}
+    .funnel .funnel-row{opacity:1!important;visibility:visible!important;transform:none!important;width:var(--w)!important;max-width:100%!important;margin:0!important;display:grid!important;grid-template-columns:minmax(120px,180px) minmax(0,1fr)!important;gap:4px 24px!important;align-items:center!important;background:#fffaf1!important;border:1px solid rgba(190,132,24,.28)!important;border-left:8px solid #efb51f!important;padding:22px 26px!important;color:#2b2119!important;min-height:118px!important;box-sizing:border-box!important}
     .funnel .funnel-row strong{grid-row:1 / span 2;font-size:clamp(2rem,4vw,3.5rem)!important;color:#c98b17!important;line-height:1!important;text-decoration:none!important}
     .funnel .funnel-row span{font-size:clamp(1.02rem,2vw,1.35rem)!important;font-weight:800!important;line-height:1.25!important;color:#2b2119!important}
     .funnel .funnel-row small{display:block!important;font-size:.88rem;line-height:1.5;color:#79634f}
@@ -63,6 +63,8 @@
       .duplicate .dup-path article h3{font-size:1.2rem}
       .duplicate>.manifest{margin-top:34px!important;padding:24px 22px!important}
 
+      .funnel{padding-bottom:64px!important}
+      .funnel .funnel-list{gap:12px!important}
       .funnel .funnel-row{width:100%!important;grid-template-columns:100px minmax(0,1fr)!important;padding:20px 18px!important;gap:5px 16px!important;min-height:0!important}
       .funnel .funnel-row strong{font-size:2rem!important}
       .funnel .funnel-row span{font-size:1rem!important}
