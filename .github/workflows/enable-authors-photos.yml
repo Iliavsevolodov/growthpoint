@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'authors-photos.js'
+      - '.github/workflows/enable-authors-photos.yml'
 jobs:
   update-index:
     runs-on: ubuntu-latest
