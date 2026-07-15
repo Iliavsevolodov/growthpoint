@@ -82,4 +82,11 @@
   document.head.appendChild(style);
 
   if (window.lucide) window.lucide.createIcons();
+
+  if (!document.querySelector('script[data-author-photos]')) {
+    const photoScript = document.createElement('script');
+    photoScript.src = 'authors-photos.js?v=authors-photos-20260715';
+    photoScript.dataset.authorPhotos = 'true';
+    document.body.appendChild(photoScript);
+  }
 })();
