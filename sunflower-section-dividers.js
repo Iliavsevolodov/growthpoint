@@ -20,31 +20,36 @@
     .sunflower-divider{
       position:relative;
       width:100%;
-      height:clamp(92px,13vw,170px);
-      margin:clamp(-30px,-2vw,-12px) 0;
-      overflow:hidden;
+      height:auto;
+      margin:clamp(-18px,-1vw,-8px) 0;
+      overflow:visible;
       pointer-events:none;
       z-index:3;
+      line-height:0;
     }
     .sunflower-divider img{
       display:block;
       width:100%;
-      height:100%;
-      object-fit:cover;
+      height:auto;
+      max-width:none;
+      object-fit:contain;
       object-position:center;
-      transform:scale(1.03);
+      transform:none;
     }
-    .sunflower-divider-2 img{object-position:center 56%}
-    .sunflower-divider-3 img{object-position:center 44%}
     @media(max-width:760px){
       .sunflower-divider{
-        height:92px;
-        margin:-14px 0;
+        width:100%;
+        height:auto;
+        margin:-8px 0;
+        overflow:visible;
       }
       .sunflower-divider img{
-        width:150%;
+        width:100%;
+        height:auto;
         max-width:none;
-        margin-left:-25%;
+        margin:0;
+        object-fit:contain;
+        transform:none;
       }
     }
   `;
