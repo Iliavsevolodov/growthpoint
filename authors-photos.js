@@ -45,16 +45,23 @@
     .author-real-photo{display:block;width:100%;height:100%;object-fit:cover}
     .family-real-photo{min-height:430px;object-position:center}
     .author-card .person-real-photo{min-height:420px;object-position:center top}
+
+    .thesis{padding-top:clamp(42px,5vw,72px)!important;padding-bottom:clamp(42px,5vw,72px)!important}
+    .thesis .editorial-split{gap:clamp(24px,4vw,54px)!important;align-items:center!important}
     .collage-sunflower-frame{
       background:transparent!important;
       overflow:visible!important;
-      border:none!important;
+      border:0!important;
+      outline:0!important;
       box-shadow:none!important;
       min-height:0!important;
       display:grid!important;
       place-items:center!important;
       padding:0!important;
+      margin:0!important;
     }
+    .collage-sunflower-frame::before,
+    .collage-sunflower-frame::after{display:none!important;content:none!important}
     .collage-sunflower-frame img{
       width:min(100%,620px)!important;
       height:auto!important;
@@ -62,16 +69,24 @@
       object-fit:contain!important;
       display:block!important;
       background:transparent!important;
+      border:0!important;
+      outline:0!important;
+      box-shadow:none!important;
       filter:drop-shadow(0 18px 24px rgba(54,38,20,.2)) drop-shadow(0 7px 9px rgba(54,38,20,.12));
     }
-    .collage-sunflower-frame .photo-label{left:4%!important;bottom:3%!important;z-index:2!important}
+    .collage-sunflower-frame .photo-label{left:3%!important;bottom:2%!important;z-index:2!important}
+
     @media(max-width:760px){
       .family-real-photo{min-height:360px}
       .author-card .person-real-photo{height:420px;min-height:0}
+      .thesis{padding-top:28px!important;padding-bottom:34px!important}
+      .thesis .editorial-split{gap:18px!important}
+      .collage-sunflower-frame{margin:0!important}
       .collage-sunflower-frame img{
-        width:min(92vw,540px)!important;
+        width:min(86vw,500px)!important;
         filter:drop-shadow(0 13px 18px rgba(54,38,20,.18)) drop-shadow(0 5px 7px rgba(54,38,20,.1));
       }
+      .collage-sunflower-frame .photo-label{left:2%!important;bottom:1%!important}
     }
   `;
   document.head.appendChild(style);
