@@ -1,0 +1,37 @@
+name: Enable horizontal card rails
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'horizontal-card-rails.js'
+      - '.github/workflows/enable-horizontal-card-rails.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enable:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add script to index
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          tag = '  <script src="horizontal-card-rails.js?v=horizontal-rails-20260715"></script>\n'
+          if 'horizontal-card-rails.js' not in html:
+              html = html.replace('</body>', tag + '</body>')
+              path.write_text(html, encoding='utf-8')
+          PY
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then exit 0; fi
+          git add index.html
+          git commit -m "Activate horizontal card rails"
+          git push
